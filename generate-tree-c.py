@@ -394,10 +394,16 @@ def generate_tree_code_classes():
                 add_simple_getter('%s_equivalent' % qual,
                                   'PyGccTree_New(gcc_private_make_tree(build_qualified_type(self->t.inner, TYPE_QUAL_%s)))' % qual.upper(),
                                   'The gcc.Type for the %s version of this type' % qual)
+
         if tree_type.SYM == 'RECORD_TYPE':
             add_simple_getter('const',
                               'PyBool_FromLong(TYPE_READONLY(self->t.inner))',
                               "Boolean: does this type have the 'const' modifier?")
+
+        if tree_type.SYM =='ENUMERAL_TYPE':
+            add_simple_getter('values',
+                                'PyGcc_TreeMakeListFromTreeList(TYPE_VALUES(self->t.inner))',
+                                'A list of values for this enum')
 
         if tree_type.SYM == 'INTEGER_TYPE':
             add_simple_getter('unsigned',
