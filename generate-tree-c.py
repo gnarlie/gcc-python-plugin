@@ -483,6 +483,9 @@ def generate_tree_code_classes():
             add_simple_getter('methods',
                               'PyGcc_TreeListFromChain(TYPE_METHODS(self->t.inner))',
                               "The methods of this type")
+            add_simple_getter('bases',
+                              'PyGcc_TreeListFromChain(TYPE_BINFO(self->t.inner))',
+                              "The bases of this type")
 
         if tree_type.SYM == 'IDENTIFIER_NODE':
             add_simple_getter('name',
