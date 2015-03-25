@@ -1,0 +1,10 @@
+fn: gcc.Function('foo')
+  type(decl): <type 'gcc.TypeDecl'>
+  type(decl.type): <type 'gcc.EnumeralType'>
+  decl.type.name: gcc.IdentifierNode(name='test_enum')
+      e.constant: 0
+      e.type: int
+      e.constant: 2
+      e.type: int
+      e.constant: 3
+      e.type: int

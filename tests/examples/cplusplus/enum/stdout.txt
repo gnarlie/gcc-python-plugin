@@ -1,0 +1,8 @@
+fn: gcc.Function('foo')
+return: <gcc.EnumeralType object at 0x7f866e42d238>
+    str(val): field_one
+    val.type: test_enum
+    str(val): field_two
+    val.type: test_enum
+    str(val): field_thread
+    val.type: test_enum
